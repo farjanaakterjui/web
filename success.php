@@ -61,7 +61,8 @@
                  <input type="password"name="password"class="form-control">
                </div>
                <br>
-                      
+                                      <input type="checkbox" name="remember" /> Remember me
+      
                <button type="submit" name="login" value="login" class="btn btn-primary">login</button>
             </form>
           </div>

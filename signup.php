@@ -46,7 +46,7 @@
                           </div>
                           </div>
                           <div class="form-bottom">       
-            <form action="" method="post">
+            <form action="connection.php" method="post">
                <div class="form-group"> 
                  <label>username</label>
                  <input type="text"name="username"class="form-control" required>
@@ -88,72 +88,7 @@
                         	</div>
                         </div>
       </div>
-      <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "my_first_database";
-//create a connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-//check connection
-/*if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-else {
-    echo "connected succesfully"."<br>";
-}
-$sql = "SELECT * FROM users";
-$result=mysqli_query($conn, $sql);
-if (mysqli_num_rows($result)>0) {
-   while($row=mysqli_fetch_assoc($result))
-   {
-       echo $row["id"]." ".$row["username"]." ".$row["email"]."<br>";
-   }
-}
-else {
-    echo "whoops! NO result.";
-}*/
-$name = $_POST['username'];
-$email = $_POST['email'];
-$pass = $_POST['password'];
-$add = $_POST['address'];
-
-
-//$result = mysqli_query($conn, $sql);
-
-$duplicate=mysqli_query($conn,"select * from users where username='$name' or email='$email' ");
-if (mysqli_num_rows($duplicate)==0) {
-if(isset($_POST['Signup'] ) )
-{ 
-    $sql = "INSERT INTO users (username,email,password,address) VALUES ('$name','$email','$pass','$add')";
-}
-
-if (mysqli_query($conn, $sql)) {
-    ?>
-    <div class="alert alert-success col-lg-6 col-lg-push-3">
-    Rigistration successful,
-      <br><br>Please Click here to <a href='logindatabase.php'>login</a>;
- 
-    </div>
-    <?php
-   // echo "New record created successfully";
-
-}else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-}
-else
-{    ?><div class="alert alert-success col-lg-6 col-lg-push-3">
-    duplicate data
-    <br><br>Please Click here to <a href='logindatabase.php'>login</a>
-
-    </div>
-    <?php
-
-
-}
-mysqli_close($conn);
-?>
+     
       </div>
             </div>
             

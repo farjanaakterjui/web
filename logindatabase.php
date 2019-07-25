@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+	        <?php
+
+if(isset($_COOKIE['email'] )and isset($_COOKIE['pass']))
+{//echo readfile("demo.html");
+     // require( "Location:http://localhost/customer/loginconnection.php" ); die;
+  require"demo.html";
+    exit();}
+
+?> 
     
 <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +68,7 @@
                  <input type="password"name="password"class="form-control" required>
                </div>
                <br>
-                      
+                      <input type="checkbox" name="remember" /> Remember me
                <button type="submit" name="login" value="login" class="btn btn-primary">login</button>
                <br><br>
                <a style="  float: right" class="reset_pass" href="#">Forgot password?</a>
@@ -81,7 +90,7 @@
 	                        	</a>
                         	</div>
                           <h3> Not registered?</h3>
-                          <form action="http://localhost/prac/signup.php" method="get">
+                          <form action="http://localhost/customer/signup.php" method="get">
                           <button> Create an account</button></form>
                         </div>
       </div>
@@ -94,6 +103,7 @@
       <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/scripts.js"></script>    
+        <script src="assets/js/scripts.js"></script>  
+ 
 </body>
 </html>

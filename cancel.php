@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -34,7 +35,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
       
@@ -256,7 +257,8 @@ li.dropdown {
  
         <li style="float:right"><a  href="table.php">About</a></li>
 
-      </ul>  
+      </ul> 
+    <h1>  <b>Cancel Order Within 5 Minutes</b></h1><br><br>
 <form name="form1" method="post"action="search.php">
   <input type="text" name="t1" placeholder="Enter Item Name"required>
  
@@ -265,29 +267,68 @@ li.dropdown {
  
 <?php
 
-$res=mysqli_query($conn,"select * from add_items ");
-
-while($row=mysqli_fetch_array($res)){
-  
- ?>
- <div class="container" >
-  <img src="<?php echo $row["image"];?>" alt="Avatar" class="image">
-  <div class="overlay">
-    <div class="text"><?php echo "<br>".$row["name"]."<br>";?>
-    <?php echo "price : ".$row["price"]."<br>";?>
-    <?php echo $row["type"];?></div>
-    <form name="form1" method="post"action="order.php ?id=<?php echo $row["id"];?>">
-  <input type="number" name="quantity" placeholder="quantity" min="1" max="100">
-      <button name="oder" class="butt butt1">Oder Item</button>
-
-</form>
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "my_first_database";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+$sql = "select * from customer";
 
 
-  </div>
-</div><?php
+if(isset($_GET["id"])&& isset($_POST["delete"]) )
+{
+
+
+          echo"<table class='table table-bordered'>";
+
+          echo"<table>";
+          echo"<tr>";
+
+          echo"<th>";echo "item name";echo"</th>";
+          echo"<th>";echo "quantity";echo"</th>";
+          echo"<th>";echo "price";echo"</th>";
+          echo"<th>";echo "total price";echo"</th>";
+          echo"<th>";echo "Action";echo"</th>";
+
+          echo"</tr>";
+              $id=$_GET["id"];
+
+$sql = "DELETE FROM customer WHERE id=$id and TIMESTAMPDIFF(MINUTE, date, NOW()) < 5 ";
+
+if (mysqli_query($conn, $sql)) {
+	if(mysqli_affected_rows($conn)>=1){ echo"<script>window.alert('Order Cancel Successfully!!')</script>";}
+	else
+		{echo"<script>window.alert('sorry,you can not cancel order!!')</script>";}
+
+
+    $res=mysqli_query($conn,"select * from customer order by date DESC ");
+while($row=mysqli_fetch_array($res))
+{
+    echo"<tr>";
+    echo"<td>";echo $row["name"];echo"</td>";
+    echo"<td>";echo $row["quantity"];echo"</td>";
+    echo"<td>";echo $row["price"];echo"</td>";
+    echo"<td>";echo $row["t_price"];echo"</td>";
+   echo"<td>";
+     ?><form name="form1" method="post"action="cancel.php ?id=<?php echo $row["id"];?>">
+    <button name="delete" class="butt butt1" >Delete Order</button>
+    </form><?php
+     echo"</td>";
+  echo"</tr>";
 }
+echo"</table>";
 
-?>
+}
+}
+else{
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+//if(mysqli_affected_rows($conn)){echo"<script>window.alert('Hello\nHow are you?')</script>";}
+mysqli_close($conn);
+
+//}
+
+//?>
 
  
 </body>

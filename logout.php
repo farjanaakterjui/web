@@ -87,6 +87,10 @@
               <div class="container">
 <?php
 session_start();
+// set the expiration date to one hour ago
+setcookie("email", "", time() - 3600);
+// set the expiration date to one hour ago
+setcookie("pass", "", time() - 3600);
 
 echo "<br>Hi " . $_SESSION['email'];
 

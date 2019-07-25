@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+
+    #more {display: none;}
+
+
+    .newspaper {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+  -moz-column-width: 100px; /* Firefox */
+  column-width: 100px;
+}
+    .header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      background-position: center; 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+    }
+
+    body {
+      background: whitesmoke no-repeat center top;
+      border-radius: 8px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-position: center; 
+
+      background-color: #2f4353;
+      background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+      
+    }
+
+    .topnav {
+      overflow: hidden;
+      float:right;
+      background-color: #333;
+      
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .center {
+      text-align: center;
+     
+    }
+    .centered {
+      position: absolute;
+      text-align: center;
+      top: 25%;
+      left: 35%;
+      transform: translate(-50%, -50%);  
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+
+/*navigation +dropdown start*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #333;
+  left: 50px;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+li a:hover , .dropdown:hover .dropbtn  {
+  background-color: #645c74;
+  border: 2px solid black;
+
+}
+
+li.dropdown {
+  
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*navigation +dropdown finish*/
+
+/*animation start*/
+@function makelongshadow($length,$angle) {
+  $val: 0px 0px transparent;
+  @for $i from 1 through $length {
+    $val: #{$val}, #{$i}px #{$i*$angle}px #aaa;
+  }
+  @return $val;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+
+.txt {
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12vmin;
+  font-weight: 700;
+  animation: netflix_style 3.5s infinite;
+  outline: none;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+@keyframes netflix_style {
+  0% {
+   
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(1.5, 1.5);
+  }
+  10% {
+
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(1.5, 1.5);
+  }
+  15% {
+     color:whitesmoke;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+  20% {    
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+    transform: scale(1.1, 1.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+  80% {
+    opacity: 0;    
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(0.85, 0.9);
+  }
+  
+  100% {
+    opacity: 0;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+}
+/*animation finish*/
+/*button start*/
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  top: 20%;
+  left: 87%;
+  position:fixed;
+}
+.button5 {
+  background-color: gray;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}/*button finish*/
+/*gallery start*/
+div.gallery {
+  border: 1px solid #ccc;
+  
+  margin: 5px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}/*gallery finish*/
+/*animated search*/
+input[type=text] {
+  width: 190px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 30px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 80%;
+}
+/*finish*/
+/*search button*/
+.butt {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  left: 87%;
+}
+.butt1 {border-radius: 12px;}
+/*finish*/
+/*reference*/
+b.highlight:hover {
+  color: grey;
+  
+} 
+.overflow{
+  background-color: #eee;
+  width: 200px;
+  height: 50px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float:right;
+  border: 2px solid;
+  resize:vertical;
+  
+}
+b:link, b:visited {
+  background-color: black;
+  color: darkgray;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+b:hover, b:active {
+  background-color: lightblue;
+  border: 1px solid blue; 
+}/*finish*/
+/*log in /sign up button*/
+.but {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: lightgreen;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  float:right;
+  top:0%;
+}
+
+.but1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.but1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+/*finish*/
+/*slideshow_gallery*/
+.mySlides {display:none;
+}
+/*finish*/
+  </style>
+</head>
+
+<body>  
+
+    
+ 
+  <ul>
+    
+        <li><a href="demo.html">Home</a></li>
+        <li><a href="display.php">Menu</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Contact</a>
+          <div class="dropdown-content">
+            <a href="https://www.facebook.com/foodpandaBangladesh/">Facebook  <i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/hashtag/foodpanda?lang=en">Twitter  <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/foodpandasg/?hl=en">Instagram  <i class="fa fa-instagram"></i></a> 
+             <a href="#" onclick="alert('09678-777555');">Phone  <i class="material-icons">settings_phone</i></a>
+           
+
+          </div>
+        </li>  <li style="float:right"><a href="contact.php">Message </a></li>
+                <li style="float:right"><a  href="Profile.php">My Profile</a></li>
+ 
+        <li style="float:right"><a  href="table.php">About</a></li>
+
+      </ul>    <div class="txt centered " contenteditable="true">
+        <br>
+     
+        <h1  style='font-size:60px'>FOOD PANDA<div class='fas design'>&#xf2e7;</div></h1>
+        
+
+
+    </div>
+    
+      
+   <form name="form1" method="post"action="display.php">
+
+        <button class="centered button button5">Oder Now</button></form>
+        <div align="center" style="  border: 30px solid black">
+      <img class="header" src="1 vELjQqb0K0MsKU4DU7dIuw.png" alt="food" width="1250" height="500" ></div>
+        <br><br> 
+      
+       
+</a>
+
+   
+
+<div align="center" style="font-family: 'Sofia';font-size: 22px;" >
+      
+
+<div class="w3-content w3-section w3-center responsive gallery" style="max-width:300px ">
+  <a target="_blank" href="cooking-cuisine-delicious-958545.jpg">
+      <img class="mySlides" src="cooking-cuisine-delicious-958545.jpg" alt="Indian Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="india.jpg">
+      <img class="mySlides"  src="india.jpg" alt="Indian Foods" width="300" height="400">
+    </a>
+
+
+
+    <a target="_blank" href="india1.jpg">
+      <img class="mySlides"  src="india1.jpg" alt="Indian Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="india2.jpg">
+      <img class="mySlides" src="india2.jpg" alt="Indian Foods" width="300" height="400">
+    </a>
+
+    <div class="desc">Indian Foods</div>
+</div>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000);
+}
+</script>
+<h2  >Order food from the best restaurants with foodpanda Bangladesh</h2>
+<p>Are you hungry? Did you have a long and stressful day? Interested in getting a cheesy pizza delivered to your home or office? Then foodpanda Bangladesh is the right destination for you!<span id="dots">...</span><span id="more"> foodpanda offers you a long and detailed list of the best restaurants and local favourites near you to help satisfy your hunger through our online food delivery service. Cuisines are diverse: whether you fancy a juicy burger from Takeout, fresh sushi from Samdado or peri peri chicken from Nando's, foodpanda Bangladesh has a wide range of 2000+ restaurants available from Dhaka, to Chittagong through to Sylhet. From a healthy lunch to evening snacks to a hearty dinner, foodpanda provides you with the means to satisfy your cravings throughout the day. Sit back and relax - let foodpanda Bangladesh take the pressure off your shoulders. </span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script> 
+
+  <h2 align="left" >Why choose foodpanda?</h2>
+<p align="left">
+   <b style="color: red"> &#10003;</b> More options: Food delivery from 2000+ restaurants in Dhaka, Chittagong and Sylhet in Bangladesh. Order from a wide range of cuisines ranging from fast food, to sushi, to cakes.<br>
+     <b style="color: red">&#10003;</b> Easy search: Filter by cuisine or location, or simply type in a restaurant name.<br>
+     <b style="color: red">&#10003;</b> Various offers: Indulge in the endless discounts and offers available from top restaurants.<br>
+    <b style="color: red"> &#10003;</b> Payment options: Payment made easier with cash on delivery and online payment options<br>
+     <b style="color: red">&#10003;</b> A simple 4-step food ordering process: Search &#8594; Choose &#8594; Pay &#8594; Enjoy<br>
+   </p>
+       <h2  >Choose from over 25 cuisines and order online now!</h2>
+
+     <p style=" border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px 5px #2f4353;
+   width: 900px;
+  height: 200px;
+   font-family: 'Sofia';font-size: 18px;
+  " >
+<br>
+The foodpanda experience, starting from the first step of choosing your location to receiving the food, is guaranteed to satisfy each and every customer. Want some Indian, Mexican or Middle Eastern food? Take your tastebuds on a journey around the world with the vast range of cuisines made available to you at your fingertips. Order your favourite soup, salad, sandwich or dessert from the finest restaurants in your area and receive home delivery, without going through the hassle of fighting through traffic. Let foodpanda take care of it.
+
+  </p>   
+
+<div class="w3-content w3-section w3-center responsive gallery" style="max-width:300px ">
+  <a target="_blank" href="chi2.jpg">
+      <img class="mySlide" src="chi2.jpg" alt="chinese Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="chi.jpg">
+      <img class="mySlide"  src="chi.jpg" alt="chinese Foods" width="300" height="400">
+    </a>
+
+
+
+    <a target="_blank" href="chi1.jpg">
+      <img class="mySlide"  src="chi1.jpg" alt="chinese Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="chi3.jpg">
+      <img class="mySlide" src="chi3.jpg" alt="chinese Foods" width="300" height="400">
+    </a>
+
+    <div class="desc">Chinese Food</div>
+</div>
+
+
+
+<script>
+var myInde = 0;
+carousl();
+
+function carousl() {
+  var j;
+  var y = document.getElementsByClassName("mySlide");
+  for (j = 0; j < y.length; j++) {
+    y[j].style.display = "none";  
+  }
+  myInde++;
+  if (myInde > y.length) {myInde = 1}    
+  y[myInde-1].style.display = "block";  
+  setTimeout(carousl, 2000);
+}
+</script>
+
+
+<b align="center" >
+<div class="w3-content w3-section w3-center responsive gallery" style="max-width:300px ">
+  <a target="_blank" href="index1.jpg">
+      <img class="mySlide1" src="index1.jpg" alt="fast Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="f.jpg">
+      <img class="mySlide1"  src="f.jpg" alt="fast Foods" width="300" height="400">
+    </a>
+
+
+
+    <a target="_blank" href="f1.jpg">
+      <img class="mySlide1"  src="f1.jpg" alt="fast Foods" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="f2.jpg">
+      <img class="mySlide1" src="f2.jpg" alt="fast Foods" width="300" height="400">
+    </a>
+
+    <div class="desc">Fast Food</div>
+</div>
+</b>
+
+
+<script>
+var myInd = 0;
+caroul();
+
+function caroul() {
+  var k;
+  var z = document.getElementsByClassName("mySlide1");
+  for (k = 0; k < z.length; k++) {
+    z[k].style.display = "none";  
+  }
+  myInd++;
+  if (myInd > z.length) {myInd = 1}    
+  z[myInd-1].style.display = "block";  
+  setTimeout(caroul, 2000);
+}
+</script>
+<p style="    font-family: 'Sofia';font-size: 22px;
+" align="center"><br>
+  <b>
+Home delivery via foodpanda mobile app</b><br><br>
+
+Even while on the move, you can order food online anytime and anywhere, thanks to the foodpanda mobile app for iOS, Android and Windows Phone devices. Simple, fast and convenient - the best way to sum up the online food ordering process through foodpanda Bangladesh. With an impressive choice of restaurants offering up a mouth-watering array of cuisines, foodpanda Bangladesh is confident that you will find just what you are looking for. To order food online, select your local area and you will be presented with the restaurants that deliver in your vicinity. Browse through the menus, and make your choices. Once you have completed your order, the chosen restaurant will prepare your selection while you put your feet up, relax and await your food delivery.
+
+</p>
+
+<div class="w3-content w3-section w3-center responsive gallery" style="max-width:300px ">
+  <a target="_blank" href="index2.jpg">
+      <img class="mySlide2" src="index2.jpg" alt="Desserts" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="d.jpg">
+      <img class="mySlide2"  src="d.jpg" alt="Desserts" width="300" height="400">
+    </a>
+
+
+
+    <a target="_blank" href="d1.jpg">
+      <img class="mySlide2"  src="d1.jpg" alt="Desserts" width="300" height="400">
+    </a>
+
+    <a target="_blank" href="d2.jpg">
+      <img class="mySlide2" src="d2.jpg" alt="Desserts" width="300" height="400">
+    </a>
+
+    <div class="desc">Desserts</div>
+</div>
+
+
+<script>
+var my = 0;
+carol();
+
+function carol() {
+  var m;
+  var q = document.getElementsByClassName("mySlide2");
+  for (m = 0; m < q.length; m++) {
+    q[m].style.display = "none";  
+  }
+  my++;
+  if (my > q.length) {my = 1}    
+  q[my-1].style.display = "block";  
+  setTimeout(carol, 2000);
+}
+</script>
+
+<p>
+<h2>Get the food you love</h2><br>
+
+It's all at your fingertips -- <br>the restaurants you love. Find the right food to suit your mood, and make the first bite last. Go ahead, download us.</p>
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+</div>
+    
+<br><br><br>
+  <div class="newspaper" >
+
+<p>We are passionate about great food , served in a vibrant, warm and friendly atmosphere, by people who care and who have a passion for true service</p>
+<p><h2>Opening time<br></h2>
+Mon to sat ......... 8am to 8pm<br>
+Sunday ......... 11am to 8pm<br>
+Public holiday ......... 8am to 1pm<br></p>
+<p>
+
+One of the best  Restaurants in BD, let alone Ottawa... you've got great variety of food, and one of the best buffet lunches in  town!"
+</p>
+
+</div>
+<hr>
+<p>
+Copyright © 2019 <b> <a class="highlight" style="color: black;" 
+  href="https://www.w3schools.com">https://www.w3schools.com</a></b> All Rights Reserved.<br>
+</p>
+
+  <form action="http://localhost/customer/logout.php" method="get">
+  <button class="but but1">Log out</button></form>
+
+</body>
+
+</html>

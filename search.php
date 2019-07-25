@@ -9,6 +9,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -45,35 +47,6 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 </head>
 <style>
-  /*log in /sign up button*/
-.but {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: lightgreen;
-  padding: 12px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  float:right;
-  top:0%;
-}
-
-.but1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
-.but1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-/*finish*/
      input[type=text] {
   width: 190px;
   box-sizing: border-box;
@@ -261,18 +234,26 @@ li.dropdown {
 
 </style>
 <body>
- 
-     <ul>
-         <li><a href="admin_page.php">Home</a></li>
-        <li><a href="ad.php">All Customer Info</a></li>
-        <li><a href="details.php">Total revenue(daily)</a></li>
-        <li><a href="add_item.php">Add Item</a></li>        
+ <ul>
+    
+        <li><a href="demo.html">Home</a></li>
         <li><a href="display.php">Menu</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Contact</a>
+          <div class="dropdown-content">
+            <a href="https://www.facebook.com/foodpandaBangladesh/">Facebook  <i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/hashtag/foodpanda?lang=en">Twitter  <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/foodpandasg/?hl=en">Instagram  <i class="fa fa-instagram"></i></a> 
+             <a href="#" onclick="alert('09678-777555');">Phone  <i class="material-icons">settings_phone</i></a>
+           
 
-      <li style="float:right"> <form action="http://localhost/admin/logout.php" method="get">
-  <button class="but but1">Log out</button></form></li>
+          </div>
+        </li>  <li style="float:right"><a href="contact.php">Message </a></li>
+                <li style="float:right"><a  href="Profile.php">My Profile</a></li>
+ 
+        <li style="float:right"><a  href="table.php">About</a></li>
 
-      </ul>
+      </ul> 
 <form name="form1" method="post"action="search.php">
   <input type="text" name="t1" placeholder="Enter Item Name"required>
  
@@ -288,17 +269,18 @@ if(isset($_POST["submit1"]))
   ?><div class="container" >
   <img src="<?php echo $row["image"];?>" alt="Avatar" class="image">
   <div class="overlay">
+    
     <div class="text"><?php echo $row["name"]."<br>";?>
     <?php echo "price : ".$row["price"]."<br>";?>
-    <?php echo $row["type"];?></div>
-    <form name="form1" method="post"action="delete.php ?id=<?php echo $row["id"];?>">
-    <button name="delete" class="butt butt1">Delete Item</button>
-    </form>
-    <form name="form2" method="post"action="update.php ?id=<?php echo $row["id"];?>">
-  <input type="number" name="price" placeholder="price" min="1" max="1000">
+    <?php echo $row["type"];?>
+   
+  </div>
+  <form name="form1" method="post"action="order.php ?id=<?php echo $row["id"];?>">
+  <input type="number" name="quantity" placeholder="quantity" min="1" max="100">
+      <button name="oder" class="butt butt1">Oder Item</button>
 
-            <button name="update" class="butt butt1"style="float:center">Update Price</button>
-    </form>
+</form>
+   
 
 
   </div>
